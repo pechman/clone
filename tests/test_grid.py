@@ -72,7 +72,8 @@ class Test_Grid(SearchPage):
     def export(self):
         pass
 
-
+    def exportgit(self):
+        pass
 
     # Check enter the card
 
