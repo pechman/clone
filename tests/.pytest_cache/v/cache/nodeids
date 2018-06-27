@@ -1,0 +1,7 @@
+[
+  "test_grid.py::Test_Enter::()::test_login",
+  "test_grid.py::Test_Grid::()::test_check_user_name",
+  "test_grid.py::Test_Grid::()::test_correct_menu_text",
+  "test_grid.py::Test_Grid::()::test_correct_table_column",
+  "test_grid.py::Test_Grid::()::test_display_grid_search_device"
+]
