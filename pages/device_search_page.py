@@ -9,35 +9,34 @@ class SearchPage(PageElements):
 
     # Check user name
     def check_user_first_name(self):
-        return self.search_page.check_user_first_name(*LoginPageLocators.USER_INFO_FIRST_NAME)
-
+        return self.check_one_element_exists(*LoginPageLocators.USER_INFO_FIRST_NAME).text
     def check_user_last_name(self):
-        return self.search_page.check_user_last_name(*LoginPageLocators.USER_INFO_LAST_NAME)
+        return self.check_one_element_exists(*LoginPageLocators.USER_INFO_LAST_NAME).text
 
     # Check menu-item's name
     def check_menu_device(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.MENU_DEVICE)
+        return self.check_one_element_exists(*LoginPageLocators.MENU_DEVICE).text
 
     def check_menu_site(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.MENU_SITE)
+        return self.check_one_element_exists(*LoginPageLocators.MENU_SITE).text
 
     def check_menu_resource(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.MENU_RESOURCE)
+        return self.check_one_element_exists(*LoginPageLocators.MENU_RESOURCE).text
 
     def check_menu_main(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.MENU_MAIN)
+        return self.check_one_element_exists(*LoginPageLocators.MENU_MAIN).text
 
     def check_menu_settings(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.MENU_SETTINGS)
+        return self.check_one_element_exists(*LoginPageLocators.MENU_SETTINGS).text
 
     def check_search_head(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.SEARCH_BOX_HEAD)
+        return self.check_one_element_exists(*LoginPageLocators.SEARCH_BOX_HEAD).text
 
     def check_search_grid(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.SEARCH_BOX_GRID)
+        return self.check_one_element_exists(*LoginPageLocators.SEARCH_BOX_GRID).text
 
     def check_search_results(self):
-        return self.search_page.check_text_for_menu(*LoginPageLocators.SEARCH_RESULT)
+        return self.check_one_element_exists(*LoginPageLocators.SEARCH_RESULT).text
 
     # Check table_view
     def table_view(self):
@@ -45,28 +44,28 @@ class SearchPage(PageElements):
 
     # Check column name for table
     def check_table_name(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_NAME)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_NAME).text
 
     def check_table_city(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_CITY)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_CITY).text
 
     def check_table_type(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_TYPE)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_TYPE).text
 
     def check_table_model(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_MODEL)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_MODEL).text
 
     def check_table_organization(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_ORGANIZATION)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_ORGANIZATION).text
 
     def check_table_site_name(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_SITE_NAME)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_SITE_NAME).text
 
     def check_table_ip(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.TABLE_IP)
+        return self.check_one_element_exists(*LoginPageLocators.TABLE_IP).text
 
     def check_text_for_result_number(self):
-        return self.search_page.check_number(*LoginPageLocators.SEARCH_RESULT)
+        return self.check_one_element_exists(*LoginPageLocators.SEARCH_RESULT).text
 
     def number_device(self, text_number_device):
         number_device = int(''.join(c for c in text_number_device if c.isdigit()))
@@ -74,11 +73,11 @@ class SearchPage(PageElements):
         return number_device
 
     def number_cards(self):
-        number_card = len(self.search_page.card_list(*LoginPageLocators.CARD_LIST))
+        number_card = len(self.check_set_elements_exist(*LoginPageLocators.CARD_LIST))
         return number_card
 
     def number_rows(self):
-        number_rows = len(self.search_page.card_list(*LoginPageLocators.ROW_LIST))
+        number_rows = len(self.check_set_elements_exist(*LoginPageLocators.ROW_LIST))
         return number_rows
 
     def number_of_pages(self, number):
@@ -87,39 +86,39 @@ class SearchPage(PageElements):
         return pages
 
     def check_active_text_page(self):
-        return self.search_page.active_page(*LoginPageLocators.PAGINATION_ACTIVE_PAGE)
+        return int(self.check_one_element_exists(*LoginPageLocators.PAGINATION_ACTIVE_PAGE).text)
 
     def check_text_page(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.PAGINATION_PAGE)
+        return self.check_one_element_exists(*LoginPageLocators.PAGINATION_PAGE).text
 
     def check_text_next_page(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD)
+        return self.check_one_element_exists(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD).text
 
     def check_text_end_page(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD_END)
+        return self.check_one_element_exists(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD_END).text
 
     def check_text_previus_page(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK)
+        return self.check_one_element_exists(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK).text
 
     def check_text_start_page(self):
-        return self.search_page.check_text_for_table(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK_START)
+        return self.check_one_element_exists(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK_START).text
 
     def click_next_page(self):
-        return self.search_page.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD)
+        return self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD)
 
     def click_end_page(self):
-        return self.search_page.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD_END)
+        return self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD_END)
 
     def click_previous_page(self):
-        return self.search_page.click(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK)
+        return self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK)
 
     def click_start_page(self):
-        return self.search_page.click(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK_START)
+        return self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_BACK_START)
 
     def check_current_view_mode(self):
-        if len(self.search_page.view_active_mode(*LoginPageLocators.VIEW_MODE_CARDS))<1:
+        if len(self.check_set_elements_exist(*LoginPageLocators.VIEW_MODE_CARDS))<1:
             mode = "table"
-        if len(self.search_page.view_active_mode(*LoginPageLocators.VIEW_MODE_TABLE))<1:
+        if len(self.check_set_elements_exist(*LoginPageLocators.VIEW_MODE_TABLE))<1:
             mode = "card"
         return mode
 

@@ -3,17 +3,13 @@ from pages.device_search_page import SearchPage
 
 class Test_Enter(LoginPage):
     login = LoginPage()
-
-    def test_login(self):
-        self.login.login_as("r","1")
+    login.login_as('R', '1')
 
 class Test_Grid(SearchPage):
-    user = SearchPage()
 
     def test_check_user_name(self):
-        assert "Ранд" == self.user.check_user_first_name()
-        assert "ал'Тор" == self.user.check_user_last_name()
-        print (self.user.check_user_first_name(),self.user.check_user_last_name())
+        assert "Ранд" == self.check_user_first_name()
+        assert "ал'Тор" == self.check_user_last_name()
 
     def test_correct_menu_text(self):
         assert "Майданчик" == self.check_menu_site()
@@ -44,7 +40,7 @@ class Test_Grid(SearchPage):
         result_search_cards = self.check_text_for_result_number()
         assert "Результати пошуку" in result_search_cards
     # Check pagination
-        number_of_card_full = self.user.number_device(result_search_cards)
+        number_of_card_full = self.number_device(result_search_cards)
         if number_of_card_full > 30:
             pages = self.number_of_pages(number_of_card_full)
             assert 1 == self.check_active_text_page()
@@ -72,11 +68,6 @@ class Test_Grid(SearchPage):
     def export(self):
         pass
 
-    def exportgit(self):
-        pass
-    def expoffffrtgit(self):
-        print ("git")
-        pass
 
     # Check enter the card
 
