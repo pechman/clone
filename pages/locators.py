@@ -45,3 +45,51 @@ class LoginPageLocators(object):
     BUTTON_EXPORT_CSV = (By.XPATH, "//div[@class='search-header-controls']//i[@class='fa fa-ellipsis-v']")
     POPUP_EXPORT_CSV = (By.XPATH, "//div[@class='popup search-header-popup']")
     NAME_CARDS_SET_FOR_PAGE = (By.XPATH, "//div/table/tbody/tr/td[1]")
+    NAME_FIRST_TD_TABLE = (By.XPATH, "//html//table[1]/tbody[1]/tr[1]/td[1]/div[1]/a[1]")
+
+    # Locators for device card
+    CARD_DEVICE_NAME = (By.XPATH, "//span[@class='head-title']")
+    CARD_DEVICE_TYPE = (By.XPATH, "//html//div[@id='card-top-row']//div[2]/div[1]/div[1]")
+    CARD_DEVICE_MODEL = (By.XPATH, "//html//div[@class='head-main-row']/div[2]/div[2]/div[1]")
+    CARD_DEVICE_CITY = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[1]/div[1]/span[1]")
+    CARD_DEVICE_SITE = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[2]/div[1]")
+
+    CARD_DEVICE_PARAMETERS = (By.XPATH, "//a[@class='tab-vertical active']")
+    CARD_DEVICE_ACCESS = (By.XPATH, "//a[@class='tab-vertical'][1]")
+    CARD_DEVICE_INTERFACE = (By.XPATH, "//a[@class='tab-vertical'][2]")
+    CARD_DEVICE_CHASSIS = (By.XPATH, "//a[@class='tab-vertical'][3]")
+    CARD_DEVICE_TOPOLOGY = (By.XPATH, "//a[@class='tab-vertical'][4]")
+    CARD_DEVICE_DOCUMENTS = (By.XPATH, "//a[@class='tab-vertical'][5]")
+
+    CARD_DEVICE_EDIT = (By.XPATH, "//button[@class='button']")
+
+    CARD_DEVICE_GENERAL_INFORMATION = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']/span[1]")
+    CARD_DEVICE_GEN_MODEL = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']/div[@class='read-only-items']/div[1]/div[1]")
+    CARD_DEVICE_GEN_STATUS = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']//div[2]/div[1]")
+    CARD_DEVICE_GEN_EQUIPMENT_CODE = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']//div[3]/div[1]")
+    CARD_DEVICE_GEN_SERIAL_NUMBER = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']//div[4]/div[1]")
+    CARD_DEVICE_GEN_INVENTORY_NUMBER = (By.XPATH, "//html//div[@id='root']//div[5]/div[1]")
+    CARD_DEVICE_GEN_ORGANIZATION = (By.XPATH, "//html//div[6]/div[1]")
+    CARD_DEVICE_GEN_INSTALLATION_DATE = (By.XPATH, "//html//div[@class='content-spinner-wrapper']//div[7]/div[1]")
+    CARD_DEVICE_GEN_START_UP_DATE = (By.XPATH, "//html//div[8]/div[1]")
+    CARD_DEVICE_GEN_DESCRIPTION = (By.XPATH, "//html//div[9]/div[1]")
+
+    CARD_DEVICE_GEN_PAR = (By.XPATH, "//html//div[@class='row no-gutters']/div[2]/span[1]")
+    CARD_DEVICE_GEN_PAR_IP = (By.XPATH, "//html//div[@class='params-body-wrapper']//div[2]/div[1]/div[1]/div[1]")
+    CARD_DEVICE_GEN_PAR_MAC = (By.XPATH, "//html//div[@id='card-bottom-row']/div[@class='bottom']//div[2]/div[1]/div[2]/div[1]")
+    CARD_DEVICE_GEN_PAR_OS_TYPE = (By.XPATH, "//html//div[2]/div[1]/div[3]/div[1]")
+    CARD_DEVICE_GEN_PAR_OS_VERSION = (By.XPATH, "//html//div[2]/div[1]/div[4]/div[1]")
+
+    CARD_DEVICE_SITE_SITE = (By.XPATH, "//html//div[3]/span[1]")
+    CARD_DEVICE_SITE_SITE_NAME = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[1]/div[1]/div[1]")
+    CARD_DEVICE_SITE_ADDRESS = (By.XPATH, "//html//div[@id='card-bottom-row']//div[3]/div[1]/div[2]/div[1]")
+    CARD_DEVICE_SITE_SITE_TYPE = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[1]/div[3]/div[1]")
+    CARD_DEVICE_SITE_CITY = (By.XPATH, "//html//div[3]/div[1]/div[4]/div[1]")
+
+    CARD_DEVICE_ROLES = (By.XPATH, "//html//div[@class='row no-gutters']/div[4]/span[1]")
+
+    # LANGUAGE
+    ICON_CHANGE_LANGUAGE = (By.XPATH, "//div[@class='header-block__user-box language-box']")
+    ICON_UA_LANGUAGE = (By.XPATH, "//html//div[@class='menu lang-menu']/div[1]")
+    ICON_RU_LANGUAGE = (By.XPATH, "//html//div[@class='menu lang-menu']/div[2]")
+    ICON_EN_LANGUAGE = (By.XPATH, "//html//div[@class='menu lang-menu']/div[3]")

@@ -1,0 +1,4 @@
+{
+  "tests/test_login.py::Test_Search::()": true,
+  "tests/test_login.py::Test_login::()": true
+}

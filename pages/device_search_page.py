@@ -165,3 +165,9 @@ class SearchPage(PageElements):
                     if p != (pages - 1):
                         self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD)
         return number_cards_row
+
+    def open_device_card(self):
+        if self.check_current_view_mode()=="card":
+            self.table_view()
+            time.sleep(1)
+        self.click(*LoginPageLocators.NAME_FIRST_TD_TABLE)

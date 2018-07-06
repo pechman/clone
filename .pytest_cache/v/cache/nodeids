@@ -1,0 +1,4 @@
+[
+  "tests/test_login.py::Test_login::()::test_login_local_auth",
+  "tests/test_login.py::Test_Search::()::test_check_user_name"
+]

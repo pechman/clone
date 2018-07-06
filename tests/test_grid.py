@@ -76,7 +76,6 @@ class Test_Grid(SearchPage):
         filescv = list[1]
         assert inf_for_filesize > 0
         assert self.number_cards_full() == self.check_equivalence_csv_grid(filescv)
-    # Check enter the card
 
     # Check search for search page: number of cards, pagination, sorting, filter option
     def test_display_grid_search_device(self):
