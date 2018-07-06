@@ -33,6 +33,11 @@ class Test_Grid(SearchPage):
         # Check pagination for card view view
         self.pagination()
 
+    # number of devices from search results
+    def number_cards_full(self):
+        result_search_cards = self.check_text_for_result_number()
+        number_full = self.number_device(result_search_cards)
+        return number_full
 
     def pagination(self):
     # back to card view
@@ -65,10 +70,12 @@ class Test_Grid(SearchPage):
             assert "1" not in self.check_text_page()
     # Check export
 
-    def export(self):
-        pass
-
-
+    def test_export(self):
+        list = self.click_download_csv()
+        inf_for_filesize = list[0]
+        filescv = list[1]
+        assert inf_for_filesize > 0
+        assert self.number_cards_full() == self.check_equivalence_csv_grid(filescv)
     # Check enter the card
 
     # Check search for search page: number of cards, pagination, sorting, filter option

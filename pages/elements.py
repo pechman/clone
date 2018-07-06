@@ -14,6 +14,6 @@ class PageElements(Browser):
         return element
 
     def check_set_elements_exist(self, *locator):
-        time.sleep(4)
+        time.sleep(1)
         elements = self.driver.find_elements(*locator)
         return elements

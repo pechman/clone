@@ -125,45 +125,43 @@ class SearchPage(PageElements):
     def click_download_csv(self):
         for file in glob.glob(r'A:\download_csv\*.csv'):
             os.remove(file)
-        self.search_page.click(*LoginPageLocators.BUTTON_EXPORT_CSV)
+        self.click(*LoginPageLocators.BUTTON_EXPORT_CSV)
         time.sleep(1)
-        self.search_page.click(*LoginPageLocators.POPUP_EXPORT_CSV)
-        time.sleep(1)
+        self.click(*LoginPageLocators.POPUP_EXPORT_CSV)
+        time.sleep(2)
         filelinks = glob.glob(r'A:\download_csv\*.csv')
         filescv = filelinks[0]
         inf_for_filesize = os.path.getsize(filescv)
-        assert inf_for_filesize > 0
+        list = []
+        list.append(inf_for_filesize)
+        list.append(filescv)
+        return list
         # Проверка количества строк в файле и количества карточек найденых в системе.
+
+    def check_equivalence_csv_grid(self, filescv):
         with open(filescv, newline='', encoding="utf-8") as my_file:
             row = [line.strip() for line in my_file]
             result = []
             for i in range(len(row)):
                 if """;""" in row[i]:
                     result.append(row[i])
-            number_cards = len(result) - 1
-        assert numbers_device == number_cards
-        print("число строк в CSV файле:", number_cards)
-        print("количество карточек:", numbers_device)
+            number_cards_row = len(result) - 1
         # Перевод в табличный вид грида
-        table_icon = driver.find_element_by_xpath("//i[@class='fa fa-table']")
-        table_icon.click()
-        if numbers_device > 30:
-            pages = math.ceil(numbers_device / 30)
-
-            for p in range(pages):
-                print("текущая страница=", p + 1)
-                time.sleep(1)
-                # Проверка наличия нужных карточек и сохранения их сортировки в файле
-                device_names_one_page = driver.find_elements_by_xpath("//div/table/tbody/tr/td[1]")
-                device_names = []
-                for w in range(len(device_names_one_page)):
-                    device_names.append(device_names_one_page[w].text)
-                for k in range(len(device_names)):
-                    print("p страница=", p + 1)
-                    print("k номер в таблице=", k)
-                    print("название карточки, что соответвует строке в файле:", device_names[k])
-                    print("проверяемая строка в файле", result[k + 1 + p * 30])
-                    assert device_names[k] in result[k + 1 + 30 * p]
-                time.sleep(1)
-                if p != (pages - 1):
-                    driver.find_element_by_xpath("//html//ul[3]/li[1]").click()
+        if self.check_current_view_mode()=="card":
+            self.table_view()
+            time.sleep(1)
+            if number_cards_row > 30:
+                pages = math.ceil(number_cards_row / 30)
+                for p in range(pages):
+                    time.sleep(1)
+                    # Проверка наличия нужных карточек и сохранения их сортировки в файле
+                    device_names_one_page = self.check_set_elements_exist(*LoginPageLocators.NAME_CARDS_SET_FOR_PAGE)
+                    device_names = []
+                    for w in range(len(device_names_one_page)):
+                        device_names.append(device_names_one_page[w].text)
+                    for k in range(len(device_names)):
+                        assert device_names[k] in result[k + 1 + 30 * p]
+                    time.sleep(1)
+                    if p != (pages - 1):
+                        self.click(*LoginPageLocators.PAGINATION_ARROWHEAD_FORWARD)
+        return number_cards_row

@@ -44,3 +44,4 @@ class LoginPageLocators(object):
     ROW_LIST = (By.XPATH, "//table[@class='table-grid']//tbody/tr")
     BUTTON_EXPORT_CSV = (By.XPATH, "//div[@class='search-header-controls']//i[@class='fa fa-ellipsis-v']")
     POPUP_EXPORT_CSV = (By.XPATH, "//div[@class='popup search-header-popup']")
+    NAME_CARDS_SET_FOR_PAGE = (By.XPATH, "//div/table/tbody/tr/td[1]")
