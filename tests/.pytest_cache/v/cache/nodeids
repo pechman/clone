@@ -1,7 +1,6 @@
 [
-  "test_grid.py::Test_Enter::()::test_login",
-  "test_grid.py::Test_Grid::()::test_check_user_name",
-  "test_grid.py::Test_Grid::()::test_correct_menu_text",
-  "test_grid.py::Test_Grid::()::test_correct_table_column",
-  "test_grid.py::Test_Grid::()::test_display_grid_search_device"
+  "test_read_only_roles.py::Test_Grid::()::test_card_open",
+  "test_read_only_roles.py::Test_Card::()::test_ua_text",
+  "test_read_only_roles.py::Test_Card::()::test_ru_text",
+  "test_read_only_roles.py::Test_Card::()::test_en_text"
 ]

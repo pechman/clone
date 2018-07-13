@@ -18,3 +18,4 @@ class LoginPage(PageElements):
         self.login_page.fill(name, *LoginPageLocators.USERNAME_FIELD)
         self.login_page.fill(user_password, *LoginPageLocators.PASSWORD_FIELD)
         self.login_page.click(*LoginPageLocators.SUBMIT_BTN)
+

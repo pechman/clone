@@ -1,0 +1,9 @@
+{
+  "test_device_card_language.py::Test_Card::()::test_en_text": true,
+  "test_device_card_language.py::Test_Card::()::test_ru_text": true,
+  "test_device_card_language.py::Test_Card::()::test_ua_text": true,
+  "test_grid.py::Test_Grid::()::test_export": true,
+  "test_read_only_roles.py::Test_Card::()::test_en_text": true,
+  "test_read_only_roles.py::Test_Card::()::test_ru_text": true,
+  "test_read_only_roles.py::Test_Card::()::test_ua_text": true
+}

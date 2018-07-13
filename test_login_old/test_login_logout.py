@@ -24,7 +24,6 @@ class Test1:
         userfield.click()
         logout = driver.find_element_by_xpath("//*[contains(text(), 'Вийти')]")
         logout.click()
-        driver.switch_to.window(driver.window_handles[1])
         logoutpage = driver.find_element_by_xpath("//div[@class='login-page__form-title']")
         assert "Priocom Login" == logoutpage.text
         driver.quit()

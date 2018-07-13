@@ -1,11 +1,25 @@
 from pages.elements import PageElements
 from pages.locators import LoginPageLocators
 
+
 class CardPage(PageElements):
     card_page = PageElements()
 
     def click_button_edit(self):
         return self.click(*LoginPageLocators.CARD_DEVICE_EDIT)
+
+    def click_button_submit(self):
+        return self.click(*LoginPageLocators.CARD_DEVICE_SUBMIT)
+
+    def enter_button(self):
+        self.enter_key(*LoginPageLocators.CARD_DEVICE_SUBMIT)
+
+    def click_button_cancel(self):
+        return self.click(*LoginPageLocators.CARD_DEVICE_CANCEL)
+
+    def esc_button(self):
+        self.ecs_key(*LoginPageLocators.CARD_DEVICE_CANCEL)
+
     # Check card-item's name
     def check_text_parameters(self):
         return self.check_one_element_exists(*LoginPageLocators.CARD_DEVICE_PARAMETERS).text
@@ -114,6 +128,10 @@ class CardPage(PageElements):
         return self.check_one_element_exists(*LoginPageLocators.CARD_DEVICE_ROLES).text
 
     # Change language
+    def change_language_to_ua(self):
+        self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
+        self.click(*LoginPageLocators.ICON_UA_LANGUAGE)
+
     def change_language_to_ru(self):
         self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
         self.click(*LoginPageLocators.ICON_RU_LANGUAGE)
@@ -121,3 +139,19 @@ class CardPage(PageElements):
     def change_language_to_en(self):
         self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
         self.click(*LoginPageLocators.ICON_EN_LANGUAGE)
+
+    #Change active tab for card
+    def proceed_to_tab_access(self):
+        self.click(*LoginPageLocators.CARD_DEVICE_ACCESS)
+
+    def proceed_to_tab_interface(self):
+        self.click(*LoginPageLocators.CARD_DEVICE_INTERFACE)
+
+    def proceed_to_tab_parameters(self):
+        self.click(*LoginPageLocators.CARD_DEVICE_PARAMETERS_INACTIVE)
+
+    def proceed_to_tab_menu_first(self):
+        self.click(*LoginPageLocators.MENU_TAB_FIRST)
+
+    def proceed_to_tab_history_previous(self):
+        self.click(*LoginPageLocators.TAB_PREVIOUS)
