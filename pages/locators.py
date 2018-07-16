@@ -10,8 +10,10 @@ class LoginPageLocators(object):
     USER_INFO_LAST_NAME = (By.XPATH, "//span[@class='user-box__user-text']/div[2]")
     USER_AREA = (By.CLASS_NAME, 'user-box__user-text')
     USER_AREA_LOGOUT = (By.XPATH, "//*[contains(text(), 'Вийти')]")
-    ADD_CARD_SITE_DEVICE = (By.XPATH, "//div[@class='btn-create__fa-wrapper']")
+    ICON_ADD_CARD_SITE_DEVICE = (By.XPATH, "//div[@class='btn-create__fa-wrapper']")
     ADD_AREA_SITE_DEVICE = (By.XPATH, "//div[contains(text(),'Cтворення')]")
+    ADD_AREA_SITE = (By.XPATH, "//div[contains(text(),'Створити Майданчик')]")
+    ADD_AREA_DEVICE = (By.XPATH, "//div[contains(text(),'Створити Обладнання')]")
     BOTTOM_AREA_MAIN = (By.XPATH, "//div[contains(text(),'Головна')]")
     BOTTOM_AREA_SETTINGS = (By.XPATH, "//div[contains(text(),'Налаштування')]")
 
@@ -57,6 +59,15 @@ class LoginPageLocators(object):
     NAME_CARDS_SET_FOR_PAGE = (By.XPATH, "//div/table/tbody/tr/td[1]")
     NAME_FIRST_TD_TABLE = (By.XPATH, "//html//table[1]/tbody[1]/tr[1]/td[1]/div[1]/a[1]")
 
+
+    # Locators for filter
+
+    FILTER_TYPE = (By.XPATH, "//div[@class='Select container-comboBox is-clearable is-searchable Select--single']//div[@class='Select-control']")
+    FILTER_TYPE_ROUTER = (By.XPATH, "//span[@id='react-select-2--value']/div[contains(@class, 'Select-placeholder')]")
+    OPTION_TYPE_LOCATOR = (By.XPATH, "//div[@id='react-select-2--option-1']")
+
+
+
     # Locators for device card
     CARD_DEVICE_NAME = (By.XPATH, "//span[@class='head-title']")
     CARD_DEVICE_TYPE = (By.XPATH, "//html//div[@id='card-top-row']//div[2]/div[1]/div[1]")
@@ -67,15 +78,19 @@ class LoginPageLocators(object):
     CARD_DEVICE_PARAMETERS = (By.XPATH, "//a[@class='tab-vertical active']")
     CARD_DEVICE_PARAMETERS_INACTIVE = (By.XPATH, "//a[@class='tab-vertical'][1]")
     CARD_DEVICE_ACCESS = (By.XPATH, "//a[@class='tab-vertical'][1]")
-    CARD_DEVICE_ACCESS_TEXT = (By.XPATH, "//div[contains(text(),'ДОСТУП')]")
+    CARD_DEVICE_ACCESS_TEXT_UA = (By.XPATH, "//a[contains(text(),'ДОСТУП')]")
+    CARD_DEVICE_ACCESS_TEXT_EN = (By.XPATH, "//a[contains(text(),'ACCESS')]")
     CARD_DEVICE_INTERFACE = (By.XPATH, "//a[@class='tab-vertical'][2]")
+    CARD_DEVICE_INTERFACE_TEXT_UA = (By.XPATH, "//a[contains(text(),'ІНТЕРФЕЙСИ')]")
     CARD_DEVICE_CHASSIS = (By.XPATH, "//a[@class='tab-vertical'][3]")
     CARD_DEVICE_TOPOLOGY = (By.XPATH, "//a[@class='tab-vertical'][4]")
+    CARD_DEVICE_TOPOLOGY_TEXT_UA = (By.XPATH, "//a[contains(text(),'ТОПОЛОГІЯ')]")
     CARD_DEVICE_DOCUMENTS = (By.XPATH, "//a[@class='tab-vertical'][5]")
+    CARD_DEVICE_DOCUMENTS_TEXT_UA = (By.XPATH, "//a[contains(text(),'ДОКУМЕНТИ')]")
 
     CARD_DEVICE_EDIT = (By.XPATH, "//button[@class='button']")
     CARD_DEVICE_SUBMIT = (By.XPATH, "//button[@class='button']")
-    CARD_DEVICE_CANCEL =  (By.XPATH, "//button[@class='button cancel']")
+    CARD_DEVICE_CANCEL = (By.XPATH, "//button[@class='button cancel']")
 
     CARD_DEVICE_GENERAL_INFORMATION = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']/span[1]")
     CARD_DEVICE_GEN_MODEL = (By.XPATH, "//html//div[@class='col-lg-4 col-md-6 col-sm-12 read-only-group']/div[@class='read-only-items']/div[1]/div[1]")

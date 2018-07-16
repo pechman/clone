@@ -171,3 +171,30 @@ class SearchPage(PageElements):
             self.table_view()
             time.sleep(1)
         self.click(*LoginPageLocators.NAME_FIRST_TD_TABLE)
+
+    def menu_not_available(self):
+        exist = 0
+        try:
+            self.check_one_element_exists(*LoginPageLocators.BOTTOM_AREA_MAIN)
+            self.check_one_element_exists(*LoginPageLocators.BOTTOM_AREA_SETTINGS)
+            self.check_one_element_exists(*LoginPageLocators.MENU_RESOURCE)
+            self.click(*LoginPageLocators.ICON_ADD_CARD_SITE_DEVICE)
+            self.check_one_element_exists(*LoginPageLocators.ADD_AREA_SITE_DEVICE)
+            self.check_one_element_exists(*LoginPageLocators.ADD_AREA_SITE)
+            self.check_one_element_exists(*LoginPageLocators.ADD_AREA_DEVICE)
+            exist = 1
+        except:
+            print('Меню должны не отображаться для пользователя с правами read.')
+            exist = 0
+        finally:
+            return exist
+
+    def enable_filter(self):
+        self.click(*LoginPageLocators.FILTER_ICON)
+        time.sleep(3)
+        self.click(*LoginPageLocators.FILTER_TYPE_ROUTER)
+        time.sleep(3)
+        self.click(*LoginPageLocators.OPTION_TYPE_LOCATOR)
+
+
+

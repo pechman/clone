@@ -155,3 +155,32 @@ class CardPage(PageElements):
 
     def proceed_to_tab_history_previous(self):
         self.click(*LoginPageLocators.TAB_PREVIOUS)
+
+    def menu_parameters_not_available(self, locator):
+        exist = 0
+        if locator == 'ua':
+            try:
+                self.check_one_element_exists(*LoginPageLocators.CARD_DEVICE_ACCESS_TEXT_UA)
+                exist = 1
+            except:
+                exist = 0
+            finally:
+                return exist
+        if locator == 'en':
+            try:
+                self.check_one_element_exists(*LoginPageLocators.CARD_DEVICE_ACCESS_TEXT_EN)
+                exist = 1
+            except:
+                exist = 0
+            finally:
+                return exist
+
+    def edit_button_not_available(self):
+        exist = 1
+        try:
+            self.check_one_element_exists(*LoginPageLocators.CARD_DEVICE_EDIT)
+            exist = 1
+        except:
+            exist = 0
+        finally:
+            return exist

@@ -14,9 +14,6 @@ class Browser(object):
     driver.get("https://uss-dev-01.pyxus.local/inventory/")
     wait = WebDriverWait(driver, 3)
 
+
     def close(self):
         self.driver.quit()
-
-
-
-

@@ -1,6 +1,7 @@
 from config import Browser
 import time
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.action_chains import ActionChains
 
 class PageElements(Browser):
 
@@ -22,7 +23,24 @@ class PageElements(Browser):
 
     def enter_key(self, *locator):
         time.sleep(1)
-        return self.driver.find_element(*locator).send_keys(Keys.ENTER)
+        self.driver.switch_to_active_element()
+        self.driver.find_element(*locator).send_keys(Keys.ENTER)
+
+    def arrow_down_key1(self, *locator):
+        time.sleep(1)
+        self.driver.switch_to_active_element()
+        self.driver.find_element(*locator).send_keys(Keys.DOWN)
+
+    def arrow_down_key2(self, *locator):
+        time.sleep(1)
+        self.driver.switch_to_active_element()
+        self.driver.find_element(*locator).send_keys(Keys.ARROW_DOWN)
+
+    def tab_key(self, *locator):
+        time.sleep(1)
+        self.driver.switch_to_active_element()
+        self.driver.find_element(*locator).send_keys(Keys.TAB)
 
     def ecs_key(self, *locator):
-        return self.driver.find_element(*locator).send_keys(Keys.ESCAPE)
+        self.driver.switch_to_active_element()
+        self.driver.find_element(*locator).send_keys(Keys.ESCAPE)
