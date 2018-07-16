@@ -75,6 +75,7 @@ class LoginPageLocators(object):
     CARD_DEVICE_CITY = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[1]/div[1]/span[1]")
     CARD_DEVICE_SITE = (By.XPATH, "//html//section[@class='main-block']//div[3]/div[2]/div[1]")
 
+    CARD_DEVICE_ALL_TABS = (By.XPATH, "//a[contains(@class, 'tab-vertical')]")
     CARD_DEVICE_PARAMETERS = (By.XPATH, "//a[@class='tab-vertical active']")
     CARD_DEVICE_PARAMETERS_INACTIVE = (By.XPATH, "//a[@class='tab-vertical'][1]")
     CARD_DEVICE_ACCESS = (By.XPATH, "//a[@class='tab-vertical'][1]")

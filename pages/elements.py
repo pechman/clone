@@ -21,6 +21,9 @@ class PageElements(Browser):
         elements = self.driver.find_elements(*locator)
         return elements
 
+    def wait(self, n_seconds):
+        time.sleep(n_seconds)
+
     def enter_key(self, *locator):
         time.sleep(1)
         self.driver.switch_to_active_element()

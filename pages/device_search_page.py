@@ -184,7 +184,6 @@ class SearchPage(PageElements):
             self.check_one_element_exists(*LoginPageLocators.ADD_AREA_DEVICE)
             exist = 1
         except:
-            print('Меню должны не отображаться для пользователя с правами read.')
             exist = 0
         finally:
             return exist

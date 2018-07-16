@@ -184,3 +184,32 @@ class CardPage(PageElements):
             exist = 0
         finally:
             return exist
+
+    def switch_between_tabs(self):
+        number_of_tabs = len(self.check_set_elements_exist(*LoginPageLocators.CARD_DEVICE_ALL_TABS))
+        result_list = []
+        break_tab = 0
+        i = 1
+        while i < number_of_tabs:
+            print('i=', i)
+            self.driver.find_element_by_xpath('//a[@class="tab-vertical"][' +str(i)+ ']').click()
+            exist_menu = self.menu_parameters_not_available('ua')
+            exist_button = self.edit_button_not_available()
+            result_list.append(exist_button)
+            result_list.append(exist_menu)
+            print("result list", result_list)
+            self.driver.find_element_by_xpath('//a[@class="tab-vertical"][1]').click()
+            i +=1
+        print("result list", result_list)
+        for s in range(len(result_list)):
+            if result_list[s] != 0:
+                break_tab += 1
+        self.refresh()
+        return break_tab
+
+    def check_refresh(self):
+        self.driver.refresh()
+
+
+
+

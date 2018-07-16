@@ -24,19 +24,26 @@ class Test_Card(CardPage):
         # проверить названия закладок
 
    def test_ua_text(self):
+        self.check_refresh()
         self.ua_text()
         self.change_language_to_ru()
         self.ru_text()
         self.change_language_to_en()
         self.en_text()
+        self.change_language_to_ua()
+        assert 0 == self.switch_between_tabs()
 
    def test_ru_text(self):
         self.change_language_to_ru()
         self.ru_text()
         self.change_language_to_ru()
         self.ru_text()
+        self.check_refresh()
         self.change_language_to_en()
         self.en_text()
+        self.change_language_to_ua()
+        self.check_refresh()
+        assert 0 == self.switch_between_tabs()
 
    def test_en_text(self):
        self.change_language_to_en()
@@ -44,7 +51,8 @@ class Test_Card(CardPage):
        self.change_language_to_ru()
        self.ru_text()
        self.change_language_to_ua()
-       self.ua_text()
+       self.check_refresh()
+       assert 0 == self.switch_between_tabs()
        self.close()
 
    def ua_text(self):
