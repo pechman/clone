@@ -1,10 +1,14 @@
 from pages.login_page import LoginPage
 from pages.device_search_page import SearchPage
 from pages.device_card_page import CardPage
+import allure
+import pytest
+
 
 class Test_Enter(LoginPage):
     login = LoginPage()
     login.login_as('R', '1')
+
 
 class Test_Grid(SearchPage):
     def test_card_open(self):
@@ -12,18 +16,21 @@ class Test_Grid(SearchPage):
 
 class Test_Card(CardPage):
         # Check names for card's menu
+
    card = CardPage()
 
+
    def test_ua_text(self):
-        self.ua_text()
-        self.click_button_edit()
-        self.change_language_to_ru()
-        self.click_button_cancel()
-        self.ru_text()
-        self.click_button_edit()
-        self.change_language_to_en()
-        self.click_button_submit()
-        self.en_text()
+
+       self.ua_text()
+       self.click_button_edit()
+       self.change_language_to_ru()
+       self.click_button_cancel()
+       self.ru_text()
+       self.click_button_edit()
+       self.change_language_to_en()
+       self.click_button_submit()
+       self.en_text()
 
    def test_ru_text(self):
         self.change_language_to_ru()

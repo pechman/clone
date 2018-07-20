@@ -169,7 +169,6 @@ class SearchPage(PageElements):
     def open_device_card(self):
         if self.check_current_view_mode()=="card":
             self.table_view()
-            time.sleep(1)
         self.click(*LoginPageLocators.NAME_FIRST_TD_TABLE)
 
     def menu_not_available(self):
@@ -190,9 +189,7 @@ class SearchPage(PageElements):
 
     def enable_filter(self):
         self.click(*LoginPageLocators.FILTER_ICON)
-        time.sleep(3)
         self.click(*LoginPageLocators.FILTER_TYPE_ROUTER)
-        time.sleep(3)
         self.click(*LoginPageLocators.OPTION_TYPE_LOCATOR)
 
 

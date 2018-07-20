@@ -57,7 +57,7 @@ class LoginPageLocators(object):
     BUTTON_EXPORT_CSV = (By.XPATH, "//div[@class='search-header-controls']//i[@class='fa fa-ellipsis-v']")
     POPUP_EXPORT_CSV = (By.XPATH, "//div[@class='popup search-header-popup']")
     NAME_CARDS_SET_FOR_PAGE = (By.XPATH, "//div/table/tbody/tr/td[1]")
-    NAME_FIRST_TD_TABLE = (By.XPATH, "//html//table[1]/tbody[1]/tr[1]/td[1]/div[1]/a[1]")
+    NAME_FIRST_TD_TABLE = (By.XPATH, "//tr[1]/td[1]/div[contains(@class, 'item-cell')]/a[contains(@class, 'data-cell')]")
 
 
     # Locators for filter

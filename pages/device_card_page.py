@@ -204,12 +204,11 @@ class CardPage(PageElements):
         for s in range(len(result_list)):
             if result_list[s] != 0:
                 break_tab += 1
-        self.refresh()
         return break_tab
 
     def check_refresh(self):
         self.driver.refresh()
-
+        self.wait(2)
 
 
 
