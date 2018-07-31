@@ -12,6 +12,7 @@ class Test_Grid(SearchPage):
         assert "ал'Тор" == self.check_user_last_name()
 
     def test_correct_menu_text(self):
+        self.unwrap()
         assert "Майданчик" == self.check_menu_site()
         assert "Обладнання" == self.check_menu_device()
         assert "Ресурси" == self.check_menu_resource()

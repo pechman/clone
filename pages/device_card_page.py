@@ -129,16 +129,22 @@ class CardPage(PageElements):
 
     # Change language
     def change_language_to_ua(self):
-        self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
+        self.click(*LoginPageLocators.USER_AREA_LANG)
         self.click(*LoginPageLocators.ICON_UA_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
 
     def change_language_to_ru(self):
-        self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
+        self.click(*LoginPageLocators.USER_AREA_LANG)
         self.click(*LoginPageLocators.ICON_RU_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
 
     def change_language_to_en(self):
-        self.click(*LoginPageLocators.ICON_CHANGE_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
+        self.click(*LoginPageLocators.USER_AREA_LANG)
         self.click(*LoginPageLocators.ICON_EN_LANGUAGE)
+        self.click(*LoginPageLocators.USER_AREA)
 
     #Change active tab for card
     def proceed_to_tab_access(self):

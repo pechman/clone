@@ -189,8 +189,15 @@ class SearchPage(PageElements):
 
     def enable_filter(self):
         self.click(*LoginPageLocators.FILTER_ICON)
+        self.wait(1)
         self.click(*LoginPageLocators.FILTER_TYPE_ROUTER)
+        self.wait(1)
         self.click(*LoginPageLocators.OPTION_TYPE_LOCATOR)
+        self.wait(1)
+
+
+    def unwrap(self):
+        self.click(*LoginPageLocators.WRAP_ICON)
 
 
 
