@@ -150,6 +150,8 @@ class CardPage(PageElements):
     def proceed_to_tab_access(self):
         self.click(*LoginPageLocators.CARD_DEVICE_ACCESS)
 
+
+
     def proceed_to_tab_interface(self):
         self.click(*LoginPageLocators.CARD_DEVICE_INTERFACE)
 

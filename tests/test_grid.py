@@ -44,7 +44,7 @@ class Test_Grid(SearchPage):
     # back to card view
         self.table_view()
         result_search_cards = self.check_text_for_result_number()
-        assert "Результати пошуку" in result_search_cards
+        assert "РЕЗУЛЬТАТИ ПОШУКУ" in result_search_cards
     # Check pagination
         number_of_card_full = self.number_device(result_search_cards)
         if number_of_card_full > 30:

@@ -42,7 +42,7 @@ class LoginPageLocators(object):
     TABLE_NAME = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Назва')]")
     TABLE_CITY = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Місто')]")
     TABLE_TYPE = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Тип')]")
-    TABLE_MODEL = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Модель)]")
+    TABLE_MODEL = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Модель')]")
     TABLE_ORGANIZATION = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Організація')]")
     TABLE_SITE_NAME = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'Назва майданчика')]")
     TABLE_IP = (By.XPATH, "//div[contains(@class, 'head-cell-text') and contains(text(), 'IP адреса')]")
@@ -57,8 +57,8 @@ class LoginPageLocators(object):
     SORT_ARROWHEAD_ASC = (By.XPATH, "//i[@class='fas fa-sort-up']")
     CARD_LIST = (By.XPATH, "//html//a/div/div[@class='card__body']")
     ROW_LIST = (By.XPATH, "//table[@class='table-grid']//tbody/tr")
-    BUTTON_EXPORT_CSV = (By.XPATH, "//div[@class='search-header-controls']//i[@class='fa fa-ellipsis-v']")
-    POPUP_EXPORT_CSV = (By.XPATH, "//div[@class='popup search-header-popup']")
+    BUTTON_EXPORT_CSV = (By.XPATH, "//i[contains(@class, 'icon-kebab-vert')]")
+    POPUP_EXPORT_CSV = (By.XPATH, "//div[contains(@class, 'popup search-header-popup')]/a")
     NAME_CARDS_SET_FOR_PAGE = (By.XPATH, "//div/table/tbody/tr/td[1]")
     NAME_FIRST_TD_TABLE = (By.XPATH, "//tr[1]/td[1]/div[contains(@class, 'item-cell')]/a[contains(@class, 'data-cell')]")
 
@@ -92,7 +92,7 @@ class LoginPageLocators(object):
     CARD_DEVICE_DOCUMENTS = (By.XPATH, "//a[@class='tab-vertical'][5]")
     CARD_DEVICE_DOCUMENTS_TEXT_UA = (By.XPATH, "//a[contains(text(),'ДОКУМЕНТИ')]")
 
-    CARD_DEVICE_EDIT = (By.XPATH, "//button[@class='button']")
+    CARD_DEVICE_EDIT = (By.XPATH, "//button")
     CARD_DEVICE_SUBMIT = (By.XPATH, "//button[@class='button']")
     CARD_DEVICE_CANCEL = (By.XPATH, "//button[@class='button cancel']")
 
